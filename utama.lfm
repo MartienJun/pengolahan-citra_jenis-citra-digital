@@ -1,0 +1,262 @@
+object FormUtama: TFormUtama
+  Left = 273
+  Height = 500
+  Top = 116
+  Width = 1000
+  Caption = 'Jenis Citra Digital'
+  ClientHeight = 500
+  ClientWidth = 1000
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.0.6.0'
+  Scaled = False
+  object groupImage: TGroupBox
+    Left = 8
+    Height = 65
+    Top = 0
+    Width = 273
+    Caption = 'Image'
+    ClientHeight = 43
+    ClientWidth = 269
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    object buttonReset: TToggleBox
+      Left = 184
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Reset'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnChange = buttonResetChange
+      ParentFont = False
+      TabOrder = 0
+    end
+    object buttonOpen: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Open'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+    end
+    object buttonSave: TToggleBox
+      Left = 96
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Save'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnChange = buttonSaveChange
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object groupEdit: TGroupBox
+    Left = 8
+    Height = 161
+    Top = 80
+    Width = 96
+    Caption = 'Edit'
+    ClientHeight = 139
+    ClientWidth = 92
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object buttonRed: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Red'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = buttonRedClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object buttonGreen: TButton
+      Left = 8
+      Height = 25
+      Top = 40
+      Width = 75
+      Caption = 'Green'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = buttonGreenClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object buttonBlue: TButton
+      Left = 8
+      Height = 25
+      Top = 72
+      Width = 75
+      Caption = 'Blue'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = buttonBlueClick
+      ParentFont = False
+      TabOrder = 2
+    end
+    object buttonGray: TButton
+      Left = 8
+      Height = 25
+      Top = 104
+      Width = 75
+      Caption = 'Gray'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = buttonGrayClick
+      ParentFont = False
+      TabOrder = 3
+    end
+  end
+  object groupBiner: TGroupBox
+    Left = 8
+    Height = 105
+    Top = 392
+    Width = 321
+    Anchors = [akLeft, akBottom]
+    Caption = 'Biner'
+    ClientHeight = 83
+    ClientWidth = 317
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    object buttonBiner: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'B/W'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = buttonBinerClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object trackbarBiner: TTrackBar
+      Left = 8
+      Height = 25
+      Top = 48
+      Width = 304
+      Position = 0
+      TabOrder = 1
+    end
+    object editBiner: TEdit
+      Left = 96
+      Height = 25
+      Top = 8
+      Width = 56
+      TabOrder = 2
+    end
+  end
+  object imageBefore: TImage
+    Left = 160
+    Height = 220
+    Top = 120
+    Width = 300
+  end
+  object lblBefore: TLabel
+    Left = 160
+    Height = 21
+    Top = 88
+    Width = 50
+    Caption = 'Before'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblAfter: TLabel
+    Left = 584
+    Height = 21
+    Top = 88
+    Width = 38
+    Caption = 'After'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object imageAfter: TImage
+    Left = 584
+    Height = 220
+    Top = 120
+    Width = 300
+  end
+end
