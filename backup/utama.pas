@@ -138,6 +138,11 @@ begin
         imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], 0, 0);
       end;
     end;
+
+  //Loop y dan x, lalu isi kembali nilai Red dari RGB di setiap piksel, sementara
+  //nilai Blue dan Green diganti dengan 0. Hal ini membuat hanya nilai Red yang terlihat
+  //sehingga gambarnya hanya terdiri dari warna merah (gradasi merah gelap dan terang),
+  //atau hitam (RGB 0,0,0 adalah hitam)
 end;
 //==============================================================================
 

@@ -119,6 +119,8 @@ begin
       for x:= 0 to imageBefore.Width - 1 do
       begin
         imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], bitmapG[x,y], bitmapB[x,y]);
+        //Memasukan kembali nilai RGB pada setiap piksel pada gambar, sehingga
+        //gambar kembali memiliki warna (nilai RGB) awalnya pada setiapa piksel
       end;
     end;
 end;
