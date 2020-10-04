@@ -57,6 +57,7 @@ object FormUtama: TFormUtama
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
+      OnClick = buttonOpenClick
       ParentFont = False
       TabOrder = 1
     end
@@ -220,6 +221,7 @@ object FormUtama: TFormUtama
     Height = 220
     Top = 120
     Width = 300
+    AutoSize = True
   end
   object lblBefore: TLabel
     Left = 160
@@ -258,5 +260,14 @@ object FormUtama: TFormUtama
     Height = 220
     Top = 120
     Width = 300
+    AutoSize = True
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    left = 360
+    top = 24
+  end
+  object SavePictureDialog1: TSavePictureDialog
+    left = 520
+    top = 24
   end
 end

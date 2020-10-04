@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="JenisCitraDigital.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -21,13 +21,23 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Utama"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos Y="118"/>
+        <TopLine Value="111"/>
+        <CursorPos X="89" Y="121"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="109"/>
+        <CursorPos X="14" Y="119"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
     </Units>
-    <JumpHistory Count="8" HistoryIndex="7">
+    <JumpHistory Count="16" HistoryIndex="15">
       <Position1>
         <Filename Value="utama.pas"/>
       </Position1>
@@ -59,6 +69,37 @@
         <Filename Value="utama.pas"/>
         <Caret Line="93" Column="3" TopLine="72"/>
       </Position8>
+      <Position9>
+        <Filename Value="utama.pas"/>
+        <Caret Line="47" Column="30" TopLine="41"/>
+      </Position9>
+      <Position10>
+        <Filename Value="utama.pas"/>
+        <Caret Line="48" Column="30" TopLine="42"/>
+      </Position10>
+      <Position11>
+        <Filename Value="utama.pas"/>
+        <Caret Line="50" Column="30" TopLine="44"/>
+      </Position11>
+      <Position12>
+        <Filename Value="utama.pas"/>
+        <Caret Line="71" Column="81" TopLine="56"/>
+      </Position12>
+      <Position13>
+        <Filename Value="utama.pas"/>
+        <Caret Line="95" Column="39" TopLine="82"/>
+      </Position13>
+      <Position14>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+      </Position14>
+      <Position15>
+        <Filename Value="utama.pas"/>
+        <Caret Line="103" Column="25" TopLine="89"/>
+      </Position15>
+      <Position16>
+        <Filename Value="utama.pas"/>
+        <Caret Line="94" Column="27" TopLine="90"/>
+      </Position16>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

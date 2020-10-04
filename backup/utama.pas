@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
-  ExtCtrls;
+  ExtCtrls, ExtDlgs, windows;
 
 type
 
@@ -29,11 +29,14 @@ type
     imageAfter: TImage;
     lblBefore: TLabel;
     lblAfter: TLabel;
+    OpenPictureDialog1: TOpenPictureDialog;
+    SavePictureDialog1: TSavePictureDialog;
     trackbarBiner: TTrackBar;
     procedure buttonBinerClick(Sender: TObject);
     procedure buttonBlueClick(Sender: TObject);
     procedure buttonGrayClick(Sender: TObject);
     procedure buttonGreenClick(Sender: TObject);
+    procedure buttonOpenClick(Sender: TObject);
     procedure buttonRedClick(Sender: TObject);
     procedure buttonResetChange(Sender: TObject);
     procedure buttonSaveChange(Sender: TObject);
@@ -46,6 +49,8 @@ type
 
 var
   FormUtama: TFormUtama;
+  //Variabel untuk menampung nilai RGB dari setiap piksel pada gambar
+  bitmapR, bitmapG, bitmapB: Array [0..1000, 0..1000] of byte;
 
 implementation
 
@@ -61,9 +66,44 @@ end;
 
 
 //==============================================================================
+procedure TFormUtama.buttonOpenClick(Sender: TObject);
+var
+  x, y: Integer;
+
+begin
+  if OpenPictureDialog1.Execute then
+  begin
+    imageBefore.Picture.LoadFromFile(OpenPictureDialog1.FileName);
+    imageAfter.Picture.LoadFromFile(OpenPictureDialog1.FileName);
+    for y:= 0 to imageBefore.Height - 1 do
+    begin
+      for x:= 0 to imageBefore.Width - 1 do
+      begin
+        //Isi array dengan nilai RGB pada setiap piksel,
+        //dimulai dari piksel kiri atas ke kanan bawah
+        bitmapR[x,y]:= GetRValue(imageBefore.Canvas.Pixels[x,y]);
+        bitmapG[x,y]:= GetGValue(imageBefore.Canvas.Pixels[x,y]);
+        bitmapB[x,y]:= GetBValue(imageBefore.Canvas.Pixels[x,y]);
+
+        //Load untuk imageAfter
+        bitmapR[x,y]:= GetRValue(imageAfter.Canvas.Pixels[x,y]);
+        bitmapG[x,y]:= GetGValue(imageAfter.Canvas.Pixels[x,y]);
+        bitmapB[x,y]:= GetBValue(imageAfter.Canvas.Pixels[x,y]);
+      end;
+    end;
+  end; //End if
+
+end;
+//==============================================================================
+
+
+//==============================================================================
 procedure TFormUtama.buttonSaveChange(Sender: TObject);
 begin
-
+  if SavePictureDialog1.Execute then
+  begin
+    imageAfter.Picture.SaveToFile(SavePictureDialog1.FileName);
+  end;
 end;
 //==============================================================================
 
