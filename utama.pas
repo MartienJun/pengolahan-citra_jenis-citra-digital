@@ -144,16 +144,34 @@ end;
 
 //==============================================================================
 procedure TFormUtama.buttonGreenClick(Sender: TObject);
-begin
+var
+  x,y: Integer;
 
+begin
+  for y:= 0 to imageBefore.Height - 1 do
+    begin
+      for x:= 0 to imageBefore.Width - 1 do
+      begin
+        imageAfter.Canvas.Pixels[x,y]:= RGB(0, bitmapG[x,y], 0);
+      end;
+    end;
 end;
 //==============================================================================
 
 
 //==============================================================================
 procedure TFormUtama.buttonBlueClick(Sender: TObject);
-begin
+var
+  x,y: Integer;
 
+begin
+  for y:= 0 to imageBefore.Height - 1 do
+    begin
+      for x:= 0 to imageBefore.Width - 1 do
+      begin
+        imageAfter.Canvas.Pixels[x,y]:= RGB(0, 0, bitmapB[x,y]);
+      end;
+    end;
 end;
 //==============================================================================
 

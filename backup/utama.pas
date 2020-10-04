@@ -127,8 +127,17 @@ end;
 
 //==============================================================================
 procedure TFormUtama.buttonRedClick(Sender: TObject);
-begin
+var
+  x,y: Integer;
 
+begin
+  for y:= 0 to imageBefore.Height - 1 do
+    begin
+      for x:= 0 to imageBefore.Width - 1 do
+      begin
+        imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], 0, 0);
+      end;
+    end;
 end;
 //==============================================================================
 
