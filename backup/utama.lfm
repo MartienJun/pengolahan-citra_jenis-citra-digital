@@ -232,6 +232,7 @@ object FormUtama: TFormUtama
       Top = 8
       Width = 56
       Caption = 'Green'
+      OnChange = cbGreenChange
       TabOrder = 4
     end
     object cbBlue: TCheckBox
@@ -240,6 +241,7 @@ object FormUtama: TFormUtama
       Top = 8
       Width = 46
       Caption = 'Blue'
+      OnChange = cbBlueChange
       TabOrder = 5
     end
   end

@@ -300,16 +300,53 @@ begin
   begin
     for x:= 0 to imageAfter.Width - 1 do
     begin
-      if bitmapBiner[x,y] = True then
+      if cbRed.Checked = True then
       begin
-        imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
-      end
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 0, 0)
+        end;
+      end //End if cbRed
+      else if cbGreen.Checked = True then
+      begin
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(0, 255, 0)
+        end;
+      end //End if cbGreen
+      else if cbBlue.Checked = True then
+      begin
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 255)
+        end;
+      end //End if cbBlue
       else
       begin
-        imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 0)
-      end;
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 0)
+        end;
+      end //End else;
     end;
   end;
+
 end;
 //==============================================================================
 

@@ -43,6 +43,8 @@ type
     procedure buttonRedClick(Sender: TObject);
     procedure buttonResetChange(Sender: TObject);
     procedure buttonSaveChange(Sender: TObject);
+    procedure cbBlueChange(Sender: TObject);
+    procedure cbGreenChange(Sender: TObject);
     procedure cbRedChange(Sender: TObject);
     //procedure cbRedChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -68,18 +70,6 @@ implementation
 procedure TFormUtama.FormShow(Sender: TObject);
 begin
   editBiner.Text:= IntToStr(trackbarBiner.Position);
-
-
-  //else if cbGreen.Checked = True then
-  //begin
-  //  cbRed.Enabled:= false;
-  //  cbBlue.Enabled:= false;
-  //end
-  //else
-  //begin
-  //  cbRed.Enabled:= false;
-  //  cbGreen.Enabled:= false;
-  //end;
 end;
 
 procedure TFormUtama.trackbarBinerChange(Sender: TObject);
@@ -87,6 +77,7 @@ begin
   editBiner.Text:= IntToStr(trackbarBiner.Position);
 end;
 
+//CheckBox Red
 procedure TFormUtama.cbRedChange(Sender: TObject);
 begin
   if cbRed.Checked = True then
@@ -98,6 +89,36 @@ begin
   begin
     cbGreen.Enabled:= True;
     cbBlue.Enabled:= True;
+  end;
+end;
+
+//CheckBox Green
+procedure TFormUtama.cbGreenChange(Sender: TObject);
+begin
+  if cbGreen.Checked = True then
+  begin
+    cbRed.Enabled:= false;
+    cbBlue.Enabled:= false;
+  end
+  else
+  begin
+    cbRed.Enabled:= True;
+    cbBlue.Enabled:= True;
+  end;
+end;
+
+//CheckBox Blue
+procedure TFormUtama.cbBlueChange(Sender: TObject);
+begin
+  if cbBlue.Checked = True then
+  begin
+    cbRed.Enabled:= false;
+    cbGreen.Enabled:= false;
+  end
+  else
+  begin
+    cbRed.Enabled:= True;
+    cbGreen.Enabled:= True;
   end;
 end;
 //==============================================================================
@@ -279,16 +300,53 @@ begin
   begin
     for x:= 0 to imageAfter.Width - 1 do
     begin
-      if bitmapBiner[x,y] = True then
+      if cbRed.Checked = True then
       begin
-        imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
-      end
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 0, 0)
+        end;
+      end //End if cbRed
+      else if cbGreen.Checked = True then
+      begin
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(0, 255, 0)
+        end;
+      end //End if cbGreen
+      else if cbBlue.Checked = True then;
+      begin
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 255)
+        end;
+      end //End if cbBlue
       else
       begin
-        imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 0)
-      end;
+        if bitmapBiner[x,y] = True then
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+        end
+        else
+        begin
+          imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 0)
+        end;
+      end //End else;
     end;
   end;
+
 end;
 //==============================================================================
 
