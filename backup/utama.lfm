@@ -217,15 +217,16 @@ object FormUtama: TFormUtama
       Width = 56
       TabOrder = 2
     end
-    object radbuttonRed: TRadioButton
+    object cbRed: TCheckBox
       Left = 168
       Height = 21
       Top = 8
       Width = 43
       Caption = 'Red'
+      OnChange = cbRedChange
       TabOrder = 3
     end
-    object radbuttonGreen: TRadioButton
+    object cbGreen: TCheckBox
       Left = 224
       Height = 21
       Top = 8
@@ -233,7 +234,7 @@ object FormUtama: TFormUtama
       Caption = 'Green'
       TabOrder = 4
     end
-    object radbuttonBlue: TRadioButton
+    object cbBlue: TCheckBox
       Left = 288
       Height = 21
       Top = 8

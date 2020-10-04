@@ -21,6 +21,9 @@ type
     buttonOpen: TButton;
     buttonSave: TToggleBox;
     buttonReset: TToggleBox;
+    cbRed: TCheckBox;
+    cbGreen: TCheckBox;
+    cbBlue: TCheckBox;
     editBiner: TEdit;
     groupBiner: TGroupBox;
     groupEdit: TGroupBox;
@@ -30,9 +33,6 @@ type
     lblBefore: TLabel;
     lblAfter: TLabel;
     OpenPictureDialog1: TOpenPictureDialog;
-    radbuttonBlue: TRadioButton;
-    radbuttonRed: TRadioButton;
-    radbuttonGreen: TRadioButton;
     SavePictureDialog1: TSavePictureDialog;
     trackbarBiner: TTrackBar;
     procedure buttonBinerClick(Sender: TObject);
@@ -43,6 +43,10 @@ type
     procedure buttonRedClick(Sender: TObject);
     procedure buttonResetChange(Sender: TObject);
     procedure buttonSaveChange(Sender: TObject);
+    procedure cbBlueChange(Sender: TObject);
+    procedure cbGreenChange(Sender: TObject);
+    procedure cbRedChange(Sender: TObject);
+    //procedure cbRedChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure trackbarBinerChange(Sender: TObject);
   private
@@ -71,6 +75,51 @@ end;
 procedure TFormUtama.trackbarBinerChange(Sender: TObject);
 begin
   editBiner.Text:= IntToStr(trackbarBiner.Position);
+end;
+
+//CheckBox Red
+procedure TFormUtama.cbRedChange(Sender: TObject);
+begin
+  if cbRed.Checked = True then
+  begin
+    cbGreen.Enabled:= false;
+    cbBlue.Enabled:= false;
+  end
+  else
+  begin
+    cbGreen.Enabled:= True;
+    cbBlue.Enabled:= True;
+  end;
+end;
+
+//CheckBox Green
+procedure TFormUtama.cbGreenChange(Sender: TObject);
+begin
+  if cbGreen.Checked = True then
+  begin
+    cbRed.Enabled:= false;
+    cbBlue.Enabled:= false;
+  end
+  else
+  begin
+    cbRed.Enabled:= True;
+    cbBlue.Enabled:= True;
+  end;
+end;
+
+//CheckBox Blue
+procedure TFormUtama.cbBlueChange(Sender: TObject);
+begin
+  if cbBlue.Checked = True then
+  begin
+    cbRed.Enabled:= false;
+    cbGreen.Enabled:= false;
+  end
+  else
+  begin
+    cbRed.Enabled:= True;
+    cbGreen.Enabled:= True;
+  end;
 end;
 //==============================================================================
 
