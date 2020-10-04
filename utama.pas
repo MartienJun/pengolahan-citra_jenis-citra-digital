@@ -115,14 +115,14 @@ var
 
 begin
   for y:= 0 to imageBefore.Height - 1 do
+  begin
+    for x:= 0 to imageBefore.Width - 1 do
     begin
-      for x:= 0 to imageBefore.Width - 1 do
-      begin
-        imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], bitmapG[x,y], bitmapB[x,y]);
-        //Memasukan kembali nilai RGB pada setiap piksel pada gambar, sehingga
-        //gambar kembali memiliki warna (nilai RGB) awalnya pada setiapa piksel
-      end;
+      imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], bitmapG[x,y], bitmapB[x,y]);
+      //Memasukan kembali nilai RGB pada setiap piksel pada gambar, sehingga
+      //gambar kembali memiliki warna (nilai RGB) awalnya pada setiapa piksel
     end;
+  end;
 end;
 //==============================================================================
 
@@ -134,12 +134,12 @@ var
 
 begin
   for y:= 0 to imageBefore.Height - 1 do
+  begin
+    for x:= 0 to imageBefore.Width - 1 do
     begin
-      for x:= 0 to imageBefore.Width - 1 do
-      begin
-        imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], 0, 0);
-      end;
+      imageAfter.Canvas.Pixels[x,y]:= RGB(bitmapR[x,y], 0, 0);
     end;
+  end;
 
   //Loop y dan x, lalu isi kembali nilai Red dari RGB di setiap piksel, sementara
   //nilai Blue dan Green diganti dengan 0. Hal ini membuat hanya nilai Red yang terlihat
@@ -156,12 +156,12 @@ var
 
 begin
   for y:= 0 to imageBefore.Height - 1 do
+  begin
+    for x:= 0 to imageBefore.Width - 1 do
     begin
-      for x:= 0 to imageBefore.Width - 1 do
-      begin
-        imageAfter.Canvas.Pixels[x,y]:= RGB(0, bitmapG[x,y], 0);
-      end;
+      imageAfter.Canvas.Pixels[x,y]:= RGB(0, bitmapG[x,y], 0);
     end;
+  end;
 end;
 //==============================================================================
 
@@ -173,20 +173,34 @@ var
 
 begin
   for y:= 0 to imageBefore.Height - 1 do
+  begin
+    for x:= 0 to imageBefore.Width - 1 do
     begin
-      for x:= 0 to imageBefore.Width - 1 do
-      begin
-        imageAfter.Canvas.Pixels[x,y]:= RGB(0, 0, bitmapB[x,y]);
-      end;
+      imageAfter.Canvas.Pixels[x,y]:= RGB(0, 0, bitmapB[x,y]);
     end;
+  end;
 end;
 //==============================================================================
 
 
 //==============================================================================
 procedure TFormUtama.buttonGrayClick(Sender: TObject);
-begin
+var
+  x,y: Integer;
+  gray: byte;
 
+begin
+  for y:= 0 to imageBefore.Height - 1 do
+  begin
+    for x:= 0 to imageBefore.Width - 1 do
+    begin
+      gray:= (bitmapR[x,y] + bitmapG[x,y] + bitmapB[x,y]) div 3;
+      imageAfter.Canvas.Pixels[x,y]:= RGB(gray, gray, gray);
+    end;
+  end;
+
+  //Rumus untuk operasi grayscale adalah (nilai R + nilai G + nilai B)/3 untuk
+  //setiap piksel.
 end;
 //==============================================================================
 
