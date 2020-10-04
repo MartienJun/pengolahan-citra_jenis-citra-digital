@@ -169,11 +169,11 @@ object FormUtama: TFormUtama
     Left = 8
     Height = 105
     Top = 392
-    Width = 321
+    Width = 376
     Anchors = [akLeft, akBottom]
     Caption = 'Biner'
     ClientHeight = 83
-    ClientWidth = 317
+    ClientWidth = 372
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -13
@@ -204,8 +204,10 @@ object FormUtama: TFormUtama
       Left = 8
       Height = 25
       Top = 48
-      Width = 304
-      Position = 0
+      Width = 360
+      Max = 255
+      OnChange = trackbarBinerChange
+      Position = 127
       TabOrder = 1
     end
     object editBiner: TEdit
@@ -214,6 +216,30 @@ object FormUtama: TFormUtama
       Top = 8
       Width = 56
       TabOrder = 2
+    end
+    object radbuttonRed: TRadioButton
+      Left = 168
+      Height = 21
+      Top = 8
+      Width = 43
+      Caption = 'Red'
+      TabOrder = 3
+    end
+    object radbuttonGreen: TRadioButton
+      Left = 224
+      Height = 21
+      Top = 8
+      Width = 56
+      Caption = 'Green'
+      TabOrder = 4
+    end
+    object radbuttonBlue: TRadioButton
+      Left = 288
+      Height = 21
+      Top = 8
+      Width = 46
+      Caption = 'Blue'
+      TabOrder = 5
     end
   end
   object imageBefore: TImage

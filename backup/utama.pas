@@ -30,6 +30,9 @@ type
     lblBefore: TLabel;
     lblAfter: TLabel;
     OpenPictureDialog1: TOpenPictureDialog;
+    radbuttonBlue: TRadioButton;
+    radbuttonRed: TRadioButton;
+    radbuttonGreen: TRadioButton;
     SavePictureDialog1: TSavePictureDialog;
     trackbarBiner: TTrackBar;
     procedure buttonBinerClick(Sender: TObject);
@@ -41,6 +44,7 @@ type
     procedure buttonResetChange(Sender: TObject);
     procedure buttonSaveChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure trackbarBinerChange(Sender: TObject);
   private
 
   public
@@ -60,9 +64,15 @@ implementation
 //==============================================================================
 procedure TFormUtama.FormShow(Sender: TObject);
 begin
+  editBiner.Text:= IntToStr(trackbarBiner.Position);
+end;
 
+procedure TFormUtama.trackbarBinerChange(Sender: TObject);
+begin
+  editBiner.Text:= IntToStr(trackbarBiner.Position);
 end;
 //==============================================================================
+
 
 
 //==============================================================================
@@ -198,14 +208,23 @@ begin
       imageAfter.Canvas.Pixels[x,y]:= RGB(gray, gray, gray);
     end;
   end;
+
+  //Rumus untuk operasi grayscale adalah (nilai R + nilai G + nilai B)/3 untuk
+  //setiap piksel.
 end;
 //==============================================================================
 
 
 //==============================================================================
 procedure TFormUtama.buttonBinerClick(Sender: TObject);
-begin
+var
+  x,y: Integer;
 
+begin
+  //Panggil function button gray
+  buttonGrayClick(Sender);
+
+  //Ubah ke biner atau B/W
 end;
 //==============================================================================
 

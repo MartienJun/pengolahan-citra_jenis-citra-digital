@@ -21,8 +21,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Utama"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="180"/>
-        <CursorPos X="3" Y="125"/>
+        <TopLine Value="207"/>
+        <CursorPos X="17" Y="224"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -37,7 +37,7 @@
         <Loaded Value="True"/>
       </Unit2>
     </Units>
-    <JumpHistory Count="18" HistoryIndex="17">
+    <JumpHistory Count="23" HistoryIndex="22">
       <Position1>
         <Filename Value="utama.pas"/>
       </Position1>
@@ -108,6 +108,26 @@
         <Filename Value="utama.pas"/>
         <Caret Line="123" Column="80" TopLine="181"/>
       </Position18>
+      <Position19>
+        <Filename Value="utama.pas"/>
+        <Caret Line="74" Column="24" TopLine="53"/>
+      </Position19>
+      <Position20>
+        <Filename Value="utama.pas"/>
+        <Caret Line="69" Column="46" TopLine="53"/>
+      </Position20>
+      <Position21>
+        <Filename Value="utama.pas"/>
+        <Caret Line="221" Column="17" TopLine="204"/>
+      </Position21>
+      <Position22>
+        <Filename Value="utama.pas"/>
+        <Caret Line="222" Column="17" TopLine="205"/>
+      </Position22>
+      <Position23>
+        <Filename Value="utama.pas"/>
+        <Caret Line="223" Column="17" TopLine="206"/>
+      </Position23>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

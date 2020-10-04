@@ -30,6 +30,9 @@ type
     lblBefore: TLabel;
     lblAfter: TLabel;
     OpenPictureDialog1: TOpenPictureDialog;
+    radbuttonBlue: TRadioButton;
+    radbuttonRed: TRadioButton;
+    radbuttonGreen: TRadioButton;
     SavePictureDialog1: TSavePictureDialog;
     trackbarBiner: TTrackBar;
     procedure buttonBinerClick(Sender: TObject);
@@ -41,6 +44,7 @@ type
     procedure buttonResetChange(Sender: TObject);
     procedure buttonSaveChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure trackbarBinerChange(Sender: TObject);
   private
 
   public
@@ -51,6 +55,7 @@ var
   FormUtama: TFormUtama;
   //Variabel untuk menampung nilai RGB dari setiap piksel pada gambar
   bitmapR, bitmapG, bitmapB: Array [0..1000, 0..1000] of byte;
+  bitmapBiner: Array [0..1000, 0..1000] of Boolean;
 
 implementation
 
@@ -60,9 +65,15 @@ implementation
 //==============================================================================
 procedure TFormUtama.FormShow(Sender: TObject);
 begin
+  editBiner.Text:= IntToStr(trackbarBiner.Position);
+end;
 
+procedure TFormUtama.trackbarBinerChange(Sender: TObject);
+begin
+  editBiner.Text:= IntToStr(trackbarBiner.Position);
 end;
 //==============================================================================
+
 
 
 //==============================================================================
@@ -207,8 +218,49 @@ end;
 
 //==============================================================================
 procedure TFormUtama.buttonBinerClick(Sender: TObject);
-begin
+var
+  x,y: Integer;
 
+begin
+  //Panggil function button gray
+  buttonGrayClick(Sender);
+
+  //Simpan nilai biner (true/false) pada array
+  for y:= 0 to imageAfter.Height - 1 do
+  begin
+    for x:= 0 to imageAfter.Width - 1 do
+    begin
+      //Jika nilai Red (nilai RGB pada suatu piksel pada citra grayscale adalah sama
+      //oleh karena itu cukup ambil salah satu saja dari R/G/B) pada suatu piksel lebih
+      //besar dari nilai pada trackbar, maka nilai RGB pada piksel tersebut adalah diubah
+      //menjadi warna putih (255, 255, 255)
+      if Red(imageAfter.Canvas.Pixels[x,y]) > trackbarBiner.Position then
+      begin
+        bitmapBiner[x,y]:= True;
+      end
+      else
+      begin
+        bitmapBiner[x,y]:= False;
+      end;
+    end;
+  end;
+
+  //Ubah nilai RGB pada setiap piksel yang ada di gambar SESUAI dengan nilai true/
+  //false yang ada pada array bitmapBiner
+  for y:= 0 to imageAfter.Height - 1 do
+  begin
+    for x:= 0 to imageAfter.Width - 1 do
+    begin
+      if bitmapBiner[x,y] = True then
+      begin
+        imageAfter.Canvas.Pixels[x,y] := RGB(255, 255, 255)
+      end
+      else
+      begin
+        imageAfter.Canvas.Pixels[x,y] := RGB(0, 0, 0)
+      end;
+    end;
+  end;
 end;
 //==============================================================================
 
